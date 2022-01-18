@@ -1,3 +1,15 @@
-#title {color:red;}
+h1 {color:red;}
+h1 > sub {color:black}
 /* https://polypane.app/css-specificity-calculator/ */
 /* https://www.w3schools.com/cssref/css_selectors.asp */
+body > ol > li > h1 {color:orange}
+
+/* id > class > tag */
+/* 
+styling carries from parent but if present, child's styling is more important
+ */
+
+p {color:blueviolet}
+#name {color:blue}
+p:first-of-type {color:green}
+.test {color:red}
