@@ -2,8 +2,10 @@ table {
     border: 1px solid black;
     border-radius: 10px 10px 0px 0px;
 }
+
 td {
-    color:darkolivegreen
+    border: 1px solid black;
+    color:darkolivegreen;
 }
 
 th {
