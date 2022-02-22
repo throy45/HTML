@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tutorial</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  // see https://developer.mozilla.org/en-US/docs/Web/API/Event/target
+  const ul = document.createElement("ul");
+  const li1 = document.createElement("li");
+  const li2 = document.createElement("li");
+  const li3 = document.createElement("li");
+  const li4 = document.createElement("li");
+  const li5 = document.createElement("li");
+  const li6 = document.createElement("li");
+  document.body.appendChild(ul);
+  ul.appendChild(li1);
+  ul.appendChild(li2);
+  ul.appendChild(li3);
+  ul.appendChild(li4);
+  ul.appendChild(li5);
+  ul.appendChild(li6);
+
+  function hide(e) {
+    e.target.style.visibility = "hidden";
+  }
+
+  ul.addEventListener("click", hide);
+
+  ul.addEventListener("mouseover", function (e) {
+    e.target.style.backgroundColor = "red";
+  });
+  ul.addEventListener("mouseout", function (e) {
+    e.target.style.backgroundColor = "white";
+  });
+
+  const buttn = document.createElement("button");
+  buttn.textContent = "click me";
+  document.body.appendChild(buttn, (text = "click me"));
+  const counter = document.createElement("p");
+  document.body.appendChild(counter);
+
+  let value = 0;
+  counter.textContent = `Click counter: ${value}`;
+
+  buttn.addEventListener(
+    "click",
+    () => (counter.textContent = `Click counter: ${++value}`)
+  );
+
+  const resetBttn = document.createElement("button");
+  resetBttn.textContent = "reset counter";
+  document.body.appendChild(resetBttn);
+
+  resetBttn.addEventListener("click", () => {
+    value = 0;
+    counter.textContent = `Click counter: ${value}`;
+  });
+</script>

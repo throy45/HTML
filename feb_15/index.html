@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feb 15 tutorial</title>
+  </head>
+  <body>
+    <input
+      type="button"
+      value="Click me!"
+      id="btn"
+      style="background-color: white"
+      onmouseover="this.style.background = 'red'; this.style.color='yellow';"
+      onmouseleave="this.style.background = 'white'; this.style.color='black';"
+      onclick="changetext()"
+    />
+    <p>Will I change?</p>
+    <p>I'm not sure if I will change...</p>
+    <p>I am definetly not changing</p>
+
+    <label for="fName">First Name: </label>
+    <input type="text" id="fName" />
+    <br />
+    <label for="lName">Last Name: </label>
+    <input type="text" id="lName" />
+    <br />
+    <label for="phone">Phone: </label>
+    <input type="phone" id="phone" />
+
+    <script type="text/javascript" defer>
+      const alertHandler = (e) => {
+        alert("Button was pressed");
+      };
+
+      //const button = document.getElementById("btn");
+      //button.addEventListener("click", alertHandler);
+
+      const changetext = () => {
+        const myPs = document.getElementsByTagName("p"); // we stop using ids
+        myPs[0].innerHTML = "Just changed!"; // returns array, so we need to index
+        alert("Text was changed!");
+        console.log(myPs);
+      };
+
+      const backgroundToGreen = (e) => {
+        e.target.style.background = "Green";
+      };
+
+      const myInputFields = document.getElementsByTagName("input");
+      myInputFields[1].addEventListener("input", backgroundToGreen);
+      myInputFields[2].addEventListener("input", backgroundToGreen);
+      myInputFields[1].addEventListener("focusout", (e) => {
+        const inputText = e.target.value;
+        if (!inputText) {
+          e.target.style.background = "Red";
+          console.log("This is triggering");
+        } else {
+          e.target.style.background = "White";
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Messing around with JS</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="index.js"></script>
+    <!-- defer because script is at the top of the page -->
+  </head>
+  <body>
+    <button onclick="nameValue()">Set first name to "Johnny"</button>
+    <form>
+      <label for="fname">First name:</label><br />
+      <input type="text" id="fname" name="fname" value="John" /><br />
+      <label for="lname">Last name:</label><br />
+      <input type="text" id="lname" name="lname" value="Doe" /><br /><br />
+      <input
+        onmouseover="mickey()"
+        onmouseleave="reset()"
+        type="submit"
+        value="Submit"
+      />
+    </form>
+  </body>
+</html>

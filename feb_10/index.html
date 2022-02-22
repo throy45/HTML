@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="index.js" />
+  </head>
+  <body>
+    <p id="one"></p>
+    <p id="two"></p>
+    <p id="three"></p>
+    <p id="four"></p>
+
+    <script type="text/javascript">
+      let str1 = "global let SOEN";
+      var str2 = "global var SOEN";
+      // let: will forget inside if
+      // var: inside if will overwrite
+      if (true) {
+        let str1 = "local let COMP"; // block scope
+        var str2 = "local var COMP"; // function scope
+        document.getElementById("one").innerHTML = str1;
+        document.getElementById("three").innerHTML = str2;
+      }
+      document.getElementById("two").innerHTML = str1;
+      document.getElementById("four").innerHTML = str2;
+    </script>
+  </body>
+</html>
